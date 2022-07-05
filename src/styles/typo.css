@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo-container h1 {
+    font-family: 'Autour One', cursive;
+}
+
+h1:not(.logo-container h1) {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.menu-items span {
+    font-size: 0.85rem;
+}
+
+#address,
+.hours-closed,
+#phone {
+    text-align: center;
+}

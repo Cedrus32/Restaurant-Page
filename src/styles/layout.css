@@ -1,0 +1,200 @@
+:root {
+    --nav-height: 10vh;
+    --main-height: (100vh - var(--nav-height));
+    --gap: 1em;
+    --padding: 1em;
+}
+
+/* SHARED GRID STYLES */
+
+body,
+.menu-container,
+#hours,
+.hours-open,
+.hours-open .left,
+.hours-open .right {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.menu-container,
+#hours,
+.hours-open,
+.hours-open .left,
+.hours-open .right {
+    grid-template-rows: auto;
+}
+
+/* SHARED FLEXBOX STYLES */
+
+nav,
+section,
+.menu-container .right,
+.menu-section,
+#menu-drinks .menu-items,
+#menu-extras .menu-items,
+.location-container,
+.days,
+.times {
+    display: flex;
+}
+
+.menu-container .right,
+.menu-section,
+.location-container,
+.days,
+.times {
+    flex-flow: column;
+}
+
+
+/* SHARED STYLES */
+
+nav,
+.menu-container .right,
+.menu-section,
+.location-container,
+.hours-open .left,
+.hours-open .right {
+    gap: var(--gap);
+}
+
+nav,
+section,
+.menu-container,
+.menu-section,
+#hours {
+    padding: var(--padding);
+}
+
+
+#address,
+#phone {
+    padding: calc(var(--padding) / 2)
+}
+
+/* CLASS STYLES */
+
+.space-left {
+    margin: 0 0 0 auto;
+}
+
+.menu-container {
+    grid-template-areas: 'pizzas sides'
+                         'pizzas drinks'
+                         'pizzas extras';
+    column-gap: var(--gap);
+    width: 80%;
+}
+
+    #menu-pizzas {
+        grid-area: 'pizzas';
+        height: 100%;
+    }
+    
+    #menu-sides {
+        grid-area: 'sides';
+    }
+
+    #menu-drinks {
+        grid-area: 'drinks';
+    }
+
+    #menu-extras {
+        grid-area: 'extras';
+    }
+
+        #menu-drinks .menu-items h2,
+        #menu-extras .menu-items h2 {
+            margin: 0 auto 0 0;
+        }
+
+#hours {
+    grid-template-areas: 'open'
+                         'closed';
+    gap: calc(var(--gap) / 2);
+}
+
+    .hours-open {
+        grid-area: 'open';
+        grid-template-areas: 'left right';
+        gap: calc(var(--gap) * 2);
+    }
+
+        .hours-open .left {
+            grid-area: 'left';
+        }
+
+        .hours-open .right {
+            grid-area: 'right';
+        }
+
+        .hours-open .left,
+        .hours-open .right {
+            grid-template-areas: 'days times';
+        }
+
+            .days {
+                grid-area: 'days';
+            }
+
+            .times {
+                grid-area: 'times';
+            }
+
+    .hours-closed {
+        grid-area: 'closed';
+    }
+
+
+/* ELEMENT STYLES */
+
+body {
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: 'nav'
+                         'main';
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav,
+main {
+    position: fixed;
+    width: 100%;
+}
+
+nav {
+    grid-area: 'nav';
+    z-index: 2;
+    justify-content: flex-start;
+    align-items: center;
+    height: var(--nav-height);
+}
+
+main {
+    grid-area: 'main';
+    z-index: 1;
+    height: 100vh;
+    overflow: auto;
+}
+
+    section {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-top: var(--nav-height);
+    }
+
+
+/* HIDE SCROLLBAR */
+
+main {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Safari & Opera */
+main::-webkit-scrollbar {
+    display: none; /* Safari & Opera */
+}

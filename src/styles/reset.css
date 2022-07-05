@@ -1,0 +1,70 @@
+/* GLOBAL ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0px; margin: 0px;
+
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 100%;
+    font: inherit;
+
+    vertical-align: baseline;
+}
+
+
+/* SECTIONS ========================= */
+
+/* render `main` element consistently in IE */
+
+main {
+    display: block;
+}
+
+/* correct font size, margin on `h1` elements */
+/* within `section` and `article` contexts */
+/* in Chrome, Firefox, and Safari */
+
+h1 {
+    font-size: 2em;
+    margin: 0rem;
+}
+
+/* standardize margins for `header` elements across broswers */
+
+h2 {
+    margin: 0rem;
+}
+
+
+/* TEXT-LEVEL SEMANTICS ========================= */
+
+/* remove gray bg on active links in IE 10 */
+
+a {
+    background-color: transparent;
+}
+
+
+/* EMBEDDED CONTENT ========================= */
+
+/* remove border on images inside links in IE 10 */
+
+img {
+    border-style: none;
+}
+
+
+/* MISC ========================= */
+
+/* add correct display in IE 10 */
+
+[hidden] {
+    display: none;
+}

@@ -1,0 +1,35 @@
+body {
+    color: black;
+}
+
+nav {
+    background-color: red;
+    color: white;
+}
+
+    nav a {
+        color: white;
+    }
+
+#home,
+#menu {
+    background-color: red;
+}
+
+.menu-container {
+    background-color: white;
+}
+
+    .menu-section {
+        border: 1px solid red;
+    }
+
+#location {
+    background-color: white;
+}
+
+    #address,
+    #hours,
+    #phone {
+        border: 1px solid red;
+    }
