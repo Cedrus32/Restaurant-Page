@@ -3,7 +3,8 @@
     --dark: hsl(180, 8%, 12%);
     --accent: #CE4A3A;
 
-    --border-width: 2px;
+    --thick: 2px;
+    --thin: 1px;
 }
 
 body {
@@ -53,7 +54,12 @@ nav {
     #address,
     #hours,
     #phone {
-        border: var(--border-width) solid var(--accent);
+        border: var(--thick) solid var(--accent);
+    }
+
+    #pizza-prices,
+    #toppings-list {
+        border: var(--thin) solid var(--accent);
     }
 
 #location {

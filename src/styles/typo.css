@@ -29,7 +29,8 @@ h2 {
     font-weight: 500;
 }
 
-.menu-items span {
+.menu-items span,
+li {
     font-size: 0.85rem;
 }
 

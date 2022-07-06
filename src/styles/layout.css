@@ -5,11 +5,10 @@
     --padding: 1em;
 }
 
-/* SHARED GRID STYLES */
+/* SHARED GRID RULES */
 
 body,
 .menu-container,
-#pizza-prices,
 #hours,
 .hours-open,
 .hours-open .left,
@@ -34,7 +33,7 @@ body,
     grid-template-rows: auto;
 }
 
-/* SHARED FLEXBOX STYLES */
+/* SHARED FLEXBOX RULES */
 
 nav,
 section,
@@ -45,6 +44,7 @@ section,
 .logo-container,
 .menu-container .right,
 .menu-section,
+#pizza-prices,
 .size,
 .type1,
 .type2,
@@ -80,8 +80,14 @@ section,
     align-items: center;
 }
 
+.type1,
+.type2,
+.type3 {
+    align-items: center;
+}
 
-/* SHARED SIZING/SPACING STYLES */
+
+/* SHARED SIZING/SPACING */
 
 .link-container,
 .link-container a:hover,
@@ -99,10 +105,19 @@ section,
     gap: var(--gap);
 }
 
+.size,
+.type1,
+.type2,
+.type3,
+#hours {
+    gap: calc(var(--gap) / 2);
+}
+
 a,
 section,
 .menu-container,
 .menu-section,
+#pizza-prices,
 #hours {
     padding: var(--padding);
 }
@@ -130,46 +145,48 @@ section,
 
     #menu-pizzas {
         grid-area: 'pizzas';
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas: 'header header'
+                             'prices prices'
+                             'pizzas toppings';
+        gap: var(--gap);
     }
 
-        #pizza-prices {
-            grid-template-columns: repeat(4, auto);
-            grid-template-rows: auto calc(100% - 1em);
-            grid-template-areas: '.    type1 type2 type3'
-                                 'size type1 type2 type3';
-            height: min-content;
-            width: 100%;
+        #menu-pizzas h1 {
+            grid-area: header;
         }
 
-            .type1 {
-                grid-area: type1;
-            }
-
-            .type2 {
-                grid-area: type2;
-            }
-
-            .type3 {
-                grid-area: type3;
-            }
+        #pizza-prices {
+            grid-area: prices;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
 
             .size,
             .type1,
             .type2,
             .type3 {
-                gap: calc(var(--gap) * 0.5);
+                width: max-content;
             }
+        
+        #pizza-list {
+            grid-area: pizzas;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: var(--padding);
+        }
 
-            .size {
-                grid-area: size;
-                justify-content: flex-end;
-            }
-
-            .type1,
-            .type2,
-            .type3 {
-                align-items: center;
-            }
+        #toppings-list {
+            grid-area: toppings;
+            display: flex;
+            flex-flow: column;
+            gap: var(--gap);
+            padding: var(--padding);
+        }
     
     #menu-sides {
         grid-area: 'sides';
@@ -191,7 +208,6 @@ section,
 #hours {
     grid-template-areas: 'open'
                          'closed';
-    gap: calc(var(--gap) / 2);
 }
 
     .hours-open {
@@ -262,6 +278,14 @@ main {
         min-height: 100%;
         padding-top: var(--nav-height);
     }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            height: 100%;
+        }
 
 
 /* HIDE SCROLLBAR */
