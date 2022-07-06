@@ -1,7 +1,7 @@
 :root {
     --light: #e5ddc7;
     --dark: hsl(180, 8%, 12%);
-    --accent: #CE4A3A;
+    --accent: hsl(6, 54%, 45%);
 
     --thick: 2px;
     --thin: 1px;
