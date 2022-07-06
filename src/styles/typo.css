@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --shrink: 1vh;
-    --base: calc(0.5em + var(--shrink));
-    --small: calc(var(--base) * 0.67);
-    --large: calc(var(--base) * 1.33);
+    --base-shrink: 1.15vw;
+    --base: calc(0.05rem + var(--base-shrink));
 }
 
 body {
@@ -21,17 +19,22 @@ a {
     font-family: 'Autour One', cursive;
 }
 
+h1 {
+    font-size: calc(var(--base) * 2);
+}
+
 h1:not(.logo-container h1) {
     font-weight: 500;
 }
 
 h2 {
+    font-size: calc(var(--base));
     font-weight: 500;
 }
 
 .menu-items span,
 li {
-    font-size: 0.85rem;
+    font-size: calc(var(--base) * 0.85);
 }
 
 #menu-drinks h1,

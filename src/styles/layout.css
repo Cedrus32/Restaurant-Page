@@ -44,35 +44,33 @@ ul,
 .link-container a:active,
 .link-container a:focus,
 .logo-container,
-.menu-container .right,
 .menu-section,
 #pizza-prices,
 .size,
-#pizza-prices .menu-item,
 #pizza-list,
+#sides-list,
 #toppings-list,
 #menu-drinks,
 #menu-extras,
-#menu-drinks .drink-items,
-#menu-extras .xtra-items,
-#menu-drinks .menu-item,
-#menu-extras .menu-item,
+.drink-items,
+.drinks-list,
+.extras-list,
+.xtra-items,
+.item-list,
+.menu-item,
 .location-container,
 .days,
 .times {
     display: flex;
 }
 
-ul,
 .logo-container,
-.menu-container .right,
 .menu-section,
 .size,
-#pizza-list,
-#toppings-list,
 #pizza-prices .menu-item,
-#menu-drinks .menu-item,
-#menu-extras .menu-item,
+#pizza-list .menu-item,
+#toppings-list,
+#sides-list .menu-item,
 .location-container,
 .days,
 .times {
@@ -104,7 +102,6 @@ section,
     height: 100%;
 }
 
-.menu-container .right,
 .menu-section,
 #menu-pizzas,
 #toppings-list,
@@ -138,28 +135,30 @@ section,
 }
 
 
-/* INDIVIDUAL CLASS/ID STYLES */
+/* default styling */
+/* classes/ids */
 
 .space-left {
     margin: 0 0 0 auto;
 }
 
 .menu-container {
-    grid-template-areas: 'pizzas sides'
-                         'pizzas drinks'
-                         'pizzas extras';
-    column-gap: var(--gap);
+    grid-template-areas: 'pizza'
+                         'sides'
+                         'drinks'
+                         'extras';
+    row-gap: var(--gap);
     width: 80%;
 }
 
     #menu-pizzas {
-        grid-area: 'pizzas';
-        /* display: grid; */
-        grid-template-columns: 1fr auto;
-        grid-template-rows: auto auto 1fr;
-        grid-template-areas: 'header header'
-                             'prices prices'
-                             'pizzas toppings';
+        grid-area: 'pizza';
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'header'
+                             'prices'
+                             'pizzas'
+                             'toppings';
     }
 
         #menu-pizzas h1 {
@@ -183,6 +182,10 @@ section,
             align-items: flex-start;
         }
 
+            #pizza-list .menu-item {
+                width: 20%;
+            }
+
         #toppings-list {
             grid-area: toppings;
         }
@@ -190,6 +193,11 @@ section,
     #menu-sides {
         grid-area: 'sides';
     }
+
+        #sides-list {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
     #menu-drinks {
         grid-area: 'drinks';
@@ -213,12 +221,19 @@ section,
             padding-left: var(--padding);
         }
 
-        #menu-drinks .drink-items,
-        #menu-extras .xtra-items {
-            grid-area: items;
+        .drinks-list,
+        .extras-list {
             width: 100%;
             gap: calc(var(--gap) * 3);
         }
+
+            .item-list {
+                flex-direction: column;
+            }
+
+                .item-list .menu-item {
+                    gap: calc(var(--gap) * 1.5);
+                }
 
 #hours {
     grid-template-areas: 'open'
@@ -227,20 +242,21 @@ section,
 
     .hours-open {
         grid-area: 'open';
-        grid-template-areas: 'left right';
+        grid-template-areas: 'top'
+                             'bottom';
         gap: calc(var(--gap) * 2);
     }
 
-        .hours-open .left {
-            grid-area: 'left';
+        .hours-open .top-left {
+            grid-area: 'top';
         }
 
-        .hours-open .right {
-            grid-area: 'right';
+        .hours-open .bottom-right {
+            grid-area: 'bottom';
         }
 
-        .hours-open .left,
-        .hours-open .right {
+        .hours-open .top-left,
+        .hours-open .bottom-right {
             grid-template-areas: 'days times';
         }
 
@@ -257,7 +273,8 @@ section,
     }
 
 
-/* INDIVIDUAL ELEMENT STYLES */
+/* default styling */
+/* elements */
 
 body {
     grid-template-rows: 10vh 90vh;
@@ -311,4 +328,40 @@ main {
 /* Safari & Opera */
 main::-webkit-scrollbar {
     display: none; /* Safari & Opera */
+}
+
+/* tablet styling */
+@media only screen and (min-width: 768px) {
+    /* ... */
+}
+
+/* desktop styling */
+@media only screen and (min-width: 992px) {
+    .menu-container {
+        grid-template-areas: 'pizzas sides'
+                             'pizzas drinks'
+                             'pizzas extras';
+        column-gap: var(--gap);
+        width: 80%;
+    }
+    
+        #menu-pizzas {
+            grid-area: 'pizzas';
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: 'header header'
+                                 'prices prices'
+                                 'pizzas toppings';
+        }
+    
+    #hours {
+        grid-template-areas: 'open'
+                                'closed';
+    }
+    
+        .hours-open {
+            grid-area: 'open';
+            grid-template-areas: 'left right';
+            gap: calc(var(--gap) * 2);
+        }
 }
