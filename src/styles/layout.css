@@ -9,11 +9,20 @@
 
 body,
 .menu-container,
+#pizza-prices,
 #hours,
 .hours-open,
 .hours-open .left,
 .hours-open .right {
     display: grid;
+}
+
+body,
+.menu-container,
+#hours,
+.hours-open,
+.hours-open .left,
+.hours-open .right {
     grid-template-columns: auto;
 }
 
@@ -29,8 +38,17 @@ body,
 
 nav,
 section,
+.link-container,
+.link-container a:hover,
+.link-container a:active,
+.link-container a:focus,
+.logo-container,
 .menu-container .right,
 .menu-section,
+.size,
+.type1,
+.type2,
+.type3,
 #menu-drinks .menu-items,
 #menu-extras .menu-items,
 .location-container,
@@ -39,18 +57,40 @@ section,
     display: flex;
 }
 
+.logo-container,
 .menu-container .right,
 .menu-section,
+.size,
+.type1,
+.type2,
+.type3,
 .location-container,
 .days,
 .times {
     flex-flow: column;
 }
 
+section,
+.link-container,
+.logo-container,
+.link-container a:hover,
+.link-container a:active,
+.link-container a:focus {
+    justify-content: center;
+    align-items: center;
+}
 
-/* SHARED STYLES */
 
-nav,
+/* SHARED SIZING/SPACING STYLES */
+
+.link-container,
+.link-container a:hover,
+.link-container a:active,
+.link-container a:focus,
+#menu-pizzas {
+    height: 100%;
+}
+
 .menu-container .right,
 .menu-section,
 .location-container,
@@ -59,7 +99,7 @@ nav,
     gap: var(--gap);
 }
 
-nav,
+a,
 section,
 .menu-container,
 .menu-section,
@@ -73,7 +113,8 @@ section,
     padding: calc(var(--padding) / 2)
 }
 
-/* CLASS STYLES */
+
+/* INDIVIDUAL CLASS/ID STYLES */
 
 .space-left {
     margin: 0 0 0 auto;
@@ -89,8 +130,46 @@ section,
 
     #menu-pizzas {
         grid-area: 'pizzas';
-        height: 100%;
     }
+
+        #pizza-prices {
+            grid-template-columns: repeat(4, auto);
+            grid-template-rows: auto calc(100% - 1em);
+            grid-template-areas: '.    type1 type2 type3'
+                                 'size type1 type2 type3';
+            height: min-content;
+            width: 100%;
+        }
+
+            .type1 {
+                grid-area: type1;
+            }
+
+            .type2 {
+                grid-area: type2;
+            }
+
+            .type3 {
+                grid-area: type3;
+            }
+
+            .size,
+            .type1,
+            .type2,
+            .type3 {
+                gap: calc(var(--gap) * 0.5);
+            }
+
+            .size {
+                grid-area: size;
+                justify-content: flex-end;
+            }
+
+            .type1,
+            .type2,
+            .type3 {
+                align-items: center;
+            }
     
     #menu-sides {
         grid-area: 'sides';
@@ -147,15 +226,15 @@ section,
     }
 
 
-/* ELEMENT STYLES */
+/* INDIVIDUAL ELEMENT STYLES */
 
 body {
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 10vh 90vh;
     grid-template-areas: 'nav'
                          'main';
     height: 100vh;
-    padding: 0px;
-    margin: 0px;
+    padding: 0em;
+    margin: 0em;
 }
 
 nav,
@@ -180,9 +259,7 @@ main {
 }
 
     section {
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+        min-height: 100%;
         padding-top: var(--nav-height);
     }
 

@@ -1,35 +1,65 @@
+:root {
+    --light: #e5ddc7;
+    --dark: hsl(180, 8%, 12%);
+    --accent: #CE4A3A;
+
+    --border-width: 2px;
+}
+
 body {
-    color: black;
+    color: var(--dark);
 }
 
 nav {
-    background-color: red;
-    color: white;
+    background-color: var(--accent);
+    color: var(--light);
 }
 
-    nav a {
-        color: white;
+    .link-container {
+        background-color: transparent;
+    }
+
+    .link-container a {
+        color: var(--light);
+    }
+
+    .link-container a:hover,
+    .link-container a:active,
+    .link-container a:focus {
+        background-color: var(--light);
+    }
+
+    a:hover,
+    a:active,
+    a:focus,
+    a::selection {
+        color: var(--accent);
     }
 
 #home,
 #menu {
-    background-color: red;
+    background-color: var(--accent);
+}
+
+.logo-container h1 {
+    color: var(--light);
 }
 
 .menu-container {
-    background-color: white;
+    background-color: var(--light);
 }
 
-    .menu-section {
-        border: 1px solid red;
-    }
-
-#location {
-    background-color: white;
-}
-
+    .menu-section,
     #address,
     #hours,
     #phone {
-        border: 1px solid red;
+        border: var(--border-width) solid var(--accent);
+    }
+
+#location {
+    background-color: var(--light);
+}
+
+    .hours-open {
+        color: var(--accent);
     }
