@@ -7,9 +7,15 @@
   <body>
 
     <nav>
-        <a href='#home'>home link</a>
-        <a class='space-left' href='#menu'>menu link</a>
-        <a href='#location'>location link</a>
+        <div class='link-container'>
+            <a href='#home'>home</a>
+        </div>
+        <div class='link-container space-left'>
+            <a href='#menu'>menu</a>
+        </div>
+        <div class='link-container'>
+            <a href='#location'>location</a>
+        </div>
     </nav>
 
     <main>
@@ -26,21 +32,49 @@
                 <div class='left'>
                     <div id='menu-pizzas' class='menu-section'>
                         <h1>Pizzas</h1>
-                        <div class='menu-items'>
-                            <h2>pizza 1</h2>
-                            <span>description</span>
+
+                        <div id='pizza-prices'>
+                            <div class='size'>
+                                <h3>10"</h3>
+                                <h3>12"</h3>
+                                <h3>16"</h3>
+                            </div>
+                            <div class='type1'>
+                                <h3>Classic</h3>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                            </div>
+                            <div class='type2'>
+                                <h3>Specialty</h3>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                            </div>
+                            <div class='type3'>
+                                <h3>Xtra Toppings</h3>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                                <span>$$$</span>
+                            </div>
                         </div>
-                        <div class='menu-items'>
-                            <h2>pizza 2</h2>
-                            <span>description</span>
+
+                        <div class='menu-subsection'>
+                            <div class='menu-items'>
+                                <h2>Classic Cheese</h2>
+                                <span>red sauce, cheese</span>
+                            </div>
+                            <div class='menu-items'>
+                                <h2>Classic Pepperoni</h2>
+                                <span>red sauce, cheese, pepperoni</span>
+                            </div>
+                            <div class='menu-items'>
+                                <h2>Tiki's Specialty</h2>
+                                <span>red sauce, cheese, sausage, pineapple</span>
+                            </div>
                         </div>
-                        <div class='menu-items'>
-                            <h2>pizza 3</h2>
-                            <span>description</span>
-                        </div>
-                        <div class='menu-items'>
-                            <h2>pizza 4</h2>
-                            <span>description</span>
+                        <div class='menu-subsection'>
+
                         </div>
                     </div>
                 </div>
