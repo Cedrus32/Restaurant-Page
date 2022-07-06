@@ -34,6 +34,13 @@ li {
     font-size: 0.85rem;
 }
 
+#menu-drinks h1,
+#menu-extras h1 {
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+}
+
 #address,
 .hours-closed,
 #phone {

@@ -9,6 +9,7 @@
 
 body,
 .menu-container,
+#menu-pizzas,
 #hours,
 .hours-open,
 .hours-open .left,
@@ -37,6 +38,7 @@ body,
 
 nav,
 section,
+ul,
 .link-container,
 .link-container a:hover,
 .link-container a:active,
@@ -46,24 +48,31 @@ section,
 .menu-section,
 #pizza-prices,
 .size,
-.type1,
-.type2,
-.type3,
-#menu-drinks .menu-items,
-#menu-extras .menu-items,
+#pizza-prices .menu-item,
+#pizza-list,
+#toppings-list,
+#menu-drinks,
+#menu-extras,
+#menu-drinks .drink-items,
+#menu-extras .xtra-items,
+#menu-drinks .menu-item,
+#menu-extras .menu-item,
 .location-container,
 .days,
 .times {
     display: flex;
 }
 
+ul,
 .logo-container,
 .menu-container .right,
 .menu-section,
 .size,
-.type1,
-.type2,
-.type3,
+#pizza-list,
+#toppings-list,
+#pizza-prices .menu-item,
+#menu-drinks .menu-item,
+#menu-extras .menu-item,
 .location-container,
 .days,
 .times {
@@ -80,9 +89,7 @@ section,
     align-items: center;
 }
 
-.type1,
-.type2,
-.type3 {
+#pizza-prices .menu-item {
     align-items: center;
 }
 
@@ -99,6 +106,8 @@ section,
 
 .menu-container .right,
 .menu-section,
+#menu-pizzas,
+#toppings-list,
 .location-container,
 .hours-open .left,
 .hours-open .right {
@@ -106,9 +115,7 @@ section,
 }
 
 .size,
-.type1,
-.type2,
-.type3,
+#pizza-prices .menu-item,
 #hours {
     gap: calc(var(--gap) / 2);
 }
@@ -118,6 +125,8 @@ section,
 .menu-container,
 .menu-section,
 #pizza-prices,
+#pizza-list,
+#toppings-list,
 #hours {
     padding: var(--padding);
 }
@@ -145,13 +154,12 @@ section,
 
     #menu-pizzas {
         grid-area: 'pizzas';
-        display: grid;
+        /* display: grid; */
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto 1fr;
         grid-template-areas: 'header header'
                              'prices prices'
                              'pizzas toppings';
-        gap: var(--gap);
     }
 
         #menu-pizzas h1 {
@@ -165,27 +173,18 @@ section,
         }
 
             .size,
-            .type1,
-            .type2,
-            .type3 {
+            #pizza-prices .menu-item {
                 width: max-content;
             }
         
         #pizza-list {
             grid-area: pizzas;
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            padding: var(--padding);
         }
 
         #toppings-list {
             grid-area: toppings;
-            display: flex;
-            flex-flow: column;
-            gap: var(--gap);
-            padding: var(--padding);
         }
     
     #menu-sides {
@@ -200,9 +199,25 @@ section,
         grid-area: 'extras';
     }
 
-        #menu-drinks .menu-items h2,
-        #menu-extras .menu-items h2 {
-            margin: 0 auto 0 0;
+    #menu-drinks,
+    #menu-extras {
+        flex-direction: row;
+        align-items: center;
+    }
+
+        #menu-drinks h1,
+        #menu-extras h1 {
+            grid-area: title;
+            width: min-content;
+            height: min-content;
+            padding-left: var(--padding);
+        }
+
+        #menu-drinks .drink-items,
+        #menu-extras .xtra-items {
+            grid-area: items;
+            width: 100%;
+            gap: calc(var(--gap) * 3);
         }
 
 #hours {
@@ -281,8 +296,6 @@ main {
 
         ul {
             list-style: none;
-            display: flex;
-            flex-flow: column;
             justify-content: space-between;
             height: 100%;
         }
