@@ -4,3 +4,17 @@
     --base-shrink: 1.15vw;
     /* --base: calc(0.05rem + var(--base-shrink)); */
 }
+
+body {
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+    #nav a:hover,
+    #nav a:active {
+        text-decoration: underline;
+    }

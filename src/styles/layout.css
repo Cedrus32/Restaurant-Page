@@ -1,0 +1,85 @@
+/* GLOBAL */
+/* GLOBAL */
+/* GLOBAL */
+
+:root {
+    /* /// */
+}
+
+* {
+    /* /// */
+}
+
+.f {
+    display: flex;
+}
+
+    .col {
+        flex-flow: column;
+    }
+
+    .row {
+        flex-flow: row;
+    }
+
+.g {
+    display: grid;
+}
+
+    .auto {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+/* DEFAULT */
+/* DEFAULT */
+/* DEFAULT */
+
+body {
+    grid-template-areas: 'nav'
+                         'main';
+    
+    height: 100vh;
+    width: 100vw;
+}
+
+/* navigation */
+
+#nav {
+    position: fixed;
+    z-index: 1;
+
+    height: 10vh;
+    width: 100%;
+}
+
+    #nav-links {
+        grid-area: nav;
+        display: flex;
+        
+        height: 100%;
+
+        list-style: none;
+    }
+
+        li {
+            display: flex;
+            align-items: center;
+
+            padding: 1em;
+        }
+
+            .nav-spacer {
+                margin: auto;
+            }
+
+/* main */
+
+main {
+    grid-area: main;
+
+    height: 100vh;
+    width: 100%;
+
+    padding-top: 10vh;
+}

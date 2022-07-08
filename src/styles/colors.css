@@ -6,3 +6,11 @@
     --thick: 2px;
     --thin: 1px;
 }
+
+#nav {
+    background-color: var(--accent);
+}
+
+    #nav a {
+        color: var(--light);
+    }
