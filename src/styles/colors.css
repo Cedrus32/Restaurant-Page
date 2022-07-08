@@ -27,7 +27,10 @@
     background-color: var(--light);
 }
 
-    #menu-container {
+    #pizzas,
+    #sides,
+    #drinks,
+    #extras {
         border: var(--thick) solid var(--accent);
     }
 
@@ -39,3 +42,7 @@
             #price-categories .category h3 {
                 color: var(--accent);
             }
+
+        #pizza-toppings {
+            border: var(--thin) solid var(--accent);
+        }

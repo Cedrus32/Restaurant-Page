@@ -121,8 +121,14 @@ main {
             gap: var(--container-gap);
 
             width: inherit;
-            padding: var(--container-pad);
         }
+
+            #pizzas,
+            #sides,
+            #drinks,
+            #extras {
+                padding: var(--container-pad);
+            }
 
             #pizzas {
                 grid-area: pizzas;
@@ -177,15 +183,17 @@ main {
                         .category {
                             display: flex;
                             flex-flow: column;
+                            gap: var(--container-gap);
                         }
 
                         #price-categories .category {
                             align-items: center;
-                            gap: var(--container-gap);
                         }
 
                 #pizza-toppings {
                     grid-area: toppings;
+
+                    padding: var(--container-pad);
                 }
 
                     #pizza-toppings .category {
@@ -202,35 +210,27 @@ main {
                 #pizza-list {
                     grid-area: list;
 
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto;
-                    grid-template-areas: '1'
-                                         '2'
-                                         '3'
-                                         '4';
+                    display: flex;
+                    flex-flow: column;
                     gap: var(--container-gap);
+
+                    padding: var(--container-pad);
                 }
-
-                    #pizza-list:nth-child(1) {
-                        grid-area: 1;
-                    }
-
-                    #pizza-list:nth-child(2) {
-                        grid-area: 2;
-                    }
-
-                    #pizza-list:nth-child(3) {
-                        grid-area: 3;
-                    }
-
-                    #pizza-list:nth-child(4) {
-                        grid-area: 4;
-                    }
 
             #sides {
                 grid-area: sides;
             }
+
+            #sides,
+            #sides-list {
+                display: flex;
+                flex-flow: column;
+                gap: var(--container-gap);
+            }
+
+                /* #sides-list {
+                    flex-wrap: wrap;
+                } */
 
             #drinks {
                 grid-area: drinks;

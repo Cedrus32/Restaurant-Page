@@ -41,3 +41,8 @@ body {
     #pizza-toppings .category-list {
         font-size: var(--subtext);
     }
+
+    #pizza-list .menu-item-ydesc span,
+    #sides-list .menu-item-ydesc span {
+        font-size: var(--subtext);
+    }
