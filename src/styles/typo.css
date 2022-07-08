@@ -10,11 +10,20 @@ body {
     font-weight: 300;
 }
 
-a {
-    text-decoration: none;
+#nav-links {
+    list-style: none;
 }
 
-    #nav a:hover,
-    #nav a:active {
-        text-decoration: underline;
+    a {
+        text-decoration: none;
     }
+
+        #nav a:hover,
+        #nav a:active {
+            text-decoration: underline;
+        }
+
+#hero h1 {
+    font-family: 'Autour One', cursive;
+    color: var(--light);
+}
