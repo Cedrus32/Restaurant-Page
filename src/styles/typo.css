@@ -2,7 +2,7 @@
 
 :root {
     --base-shrink: 1.15vw;
-    /* --base: calc(0.05rem + var(--base-shrink)); */
+    /* --base: /// ; */
 }
 
 body {
@@ -25,5 +25,9 @@ body {
 
 #hero h1 {
     font-family: 'Autour One', cursive;
-    color: var(--light);
+    /* font size set in reset.css */
+}
+
+#menu-container div > h2 {
+    font-size: 1.5em;
 }

@@ -3,7 +3,8 @@
 /* GLOBAL */
 
 :root {
-    /* /// */
+    --container-gap: 1em;
+    --container-pad: 1em;
 }
 
 * {
@@ -36,6 +37,8 @@
 /* DEFAULT */
 
 body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 9fr;
     grid-template-areas: 'nav'
                          'main';
     
@@ -80,11 +83,13 @@ main {
 }
 
     section {
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
 
-        padding-top: 10vh;
+        padding: calc(10vh + 1em) 1em 1em;
     }
+
+    /* home page */
 
     #home,
     #hero {
@@ -96,3 +101,100 @@ main {
         #hero {
             flex-flow: column;
         }
+
+    /* menu page */
+
+    #menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #menu-container {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+            grid-template-areas: 'pizzas'
+                                 'sides'
+                                 'drinks'
+                                 'extras';
+            gap: var(--container-gap);
+
+            width: inherit;
+            padding: var(--container-pad);
+        }
+
+            #pizzas {
+                grid-area: pizzas;
+                
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 'header'
+                                     'prices'
+                                     'toppings'
+                                     'list';
+                gap: var(--container-gap);
+            }
+
+                #pizzas h2 {
+                    grid-area: header;
+                }
+
+                #pizza-prices {
+                    grid-area: prices;
+
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: '.     categories'
+                                         'sizes categories';
+                    gap: var(--container-gap);
+
+                    padding: var(--container-pad);
+                }
+
+                    #sizes {
+                        grid-area: sizes;
+
+                        display: flex;
+                        flex-flow: column;
+                        gap: var(--container-gap);
+
+                        padding-right: var(--container-pad);
+                    }
+
+                    #price-categories {
+                        grid-area: categories;
+
+                        display: flex;
+                        justify-content: space-between;
+                        gap: var(--container-gap);
+                    }
+
+                        .category {
+                            display: flex;
+                            flex-flow: column;
+                            align-items: center;
+                            gap: var(--container-gap);
+                        }
+
+                #pizza-toppings {
+                    grid-area: toppings;
+                }
+
+                #pizza-list {
+                    grid-area: list;
+                }
+
+            #sides {
+                grid-area: sides;
+            }
+
+            #drinks {
+                grid-area: drinks;
+            }
+
+            #extras {
+                grid-area: extras;
+            }
