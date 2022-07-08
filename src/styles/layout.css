@@ -177,11 +177,11 @@ main {
                         .category {
                             display: flex;
                             flex-flow: column;
-                            gap: var(--container-gap);
                         }
 
                         #price-categories .category {
                             align-items: center;
+                            gap: var(--container-gap);
                         }
 
                 #pizza-toppings {
@@ -196,12 +196,37 @@ main {
                             display: flex;
                             justify-content: space-between;
                             flex-wrap: wrap;
-                            gap: var(--container-gap);
+                            gap: 0em var(--container-gap);
                         }
 
                 #pizza-list {
                     grid-area: list;
+
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: '1'
+                                         '2'
+                                         '3'
+                                         '4';
+                    gap: var(--container-gap);
                 }
+
+                    #pizza-list:nth-child(1) {
+                        grid-area: 1;
+                    }
+
+                    #pizza-list:nth-child(2) {
+                        grid-area: 2;
+                    }
+
+                    #pizza-list:nth-child(3) {
+                        grid-area: 3;
+                    }
+
+                    #pizza-list:nth-child(4) {
+                        grid-area: 4;
+                    }
 
             #sides {
                 grid-area: sides;
