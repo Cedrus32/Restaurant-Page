@@ -4,9 +4,197 @@
     <meta charset="utf-8">
     <title>Restaurant Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="index.main.js"></script></head>
-  <body>
+  <body class='g auto'>
 
-  
+  <nav id='nav'>
+    <ul id='nav-links'>
+        <li><a href='#home'>home</a></li>
+        <li class='nav-spacer'></li>
+        <li><a href='#menu'>menu</a></li>
+        <li><a href='#location'>location</a></li>
+    </ul>
+  </nav>
+
+  <!-- <main>
+    <section id='home' class='f'>
+        <div class='hero' class='f'>
+            <img src='' alt='logo'>
+            <h1 class='title'>Tiki's Pizzas</h1>
+        </div>
+    </section>
+
+    <section id='menu' class='f'>
+        <div id='menu-container' class='g'>
+            <div id='pizza' class='g'>
+                <h2>Pizza</h2>
+                <div id='pizza-prices' class='f'>
+                    <div id='size' class='f'>
+                        <span>10"</span>
+                        <span>12"</span>
+                        <span>16"</span>
+                    </div>
+                    <div id='classic-prices' class='f category'>
+                        <h3>Classic</h3>
+                        <div class='f category-list'>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                        </div>
+                    </div>
+                    <div id='specialty-prices' class='f category'>
+                        <h3>Specialty</h3>
+                        <div class='f category-list'>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                        </div>
+                    </div>
+                    <div id='supreme-prices' class='f category'>
+                        <h3>Supreme</h3>
+                        <div class='f category-list'>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                        </div>
+                    </div>
+                    <div id='topping-prices' class='f category'>
+                        <h3>Xtra Toppings</h3>
+                        <div class='f category-list'>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                            <span>$$$</span>
+                        </div>
+                    </div>
+                </div>
+                <div id='pizza-list' class='f'>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Classic Cheese</h3>
+                        <span>red sauce, cheese</span>
+                    </div>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Classic Pepperoni</h3>
+                        <span>red sauce, cheese, pepperoni</span>
+                    </div>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Tiki's Specialty</h3>
+                        <span>red sauce, cheese, ham, pineapple</span>
+                    </div>
+                    <div class='f menu-item-ydesc'>
+                        <h3>The Tiki Supreme</h3>
+                        <span>red sauce, cheese, sausage, green peppers, black olives, red onion</span>
+                    </div>
+                </div>
+                <div id='toppings' class='f category'>
+                    <h3>Toppings</h3>
+                    <div class='f category-list'>
+                        <span>cheese</span>
+                        <span>pepperoni</span>
+                        <span>ham</span>
+                        <span>sausage</span>
+                        <span>pineapple</span>
+                        <span>cheese</span>
+                        <span>green pepper</span>
+                        <span>black olive</span>
+                        <span>red onion</span>
+                        <span>fresh tomato</span>
+                    </div>
+                </div>
+            </div>
+            <div id='f sides'>
+                <h3>Sides</h3>
+                <div id='f sides-list'>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Garden Salad</h3>
+                        <span>lettuce, fresh tomato, green pepper, red onions, cheese, choice of salad dressing</span>
+                    </div>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Chicken Wings</h3>
+                        <span>Crispy chicken wings, choice of dipping sauce</span>
+                    </div>
+                    <div class='f menu-item-ydesc'>
+                        <h3>Tiki Fries</h3>
+                        <span>Golden fries with house seasoning, choice of dipping sauce</span>
+                    </div>
+                </div>
+            </div>
+            <div id='f drinks'>
+                <h3 class='sideways'>Drinks</h3>
+                <div class='f category'>
+                    <h3>soda</h3>
+                    <div class='f category-list'>
+                        <span>Coke</span>
+                        <span>Diet Coke</span>
+                        <span>Sprite</span>
+                        <span>Pibb Xtra</span>
+                    </div>
+                </div>
+                <div class='f category'>
+                    <h3>beer</h3>
+                    <div class='f category-list'>
+                        <span>Bud</span>
+                        <span>Miller</span>
+                        <span>Modelo</span>
+                        <span>Stella Artois</span>
+                    </div>
+                </div>
+            </div>
+            <div id='extras' class='f'>
+                <div class='f category'>
+                    <h3>dipping sauce</h3>
+                    <div class='f category-list'>
+                        <span>bacon katchup</span>
+                        <span>sriracha mayo</span>
+                        <span>honey mustard</span>
+                    </div>
+                </div>
+                <div class='f category'>
+                    <h3>salad dressings</h3>
+                    <div class='f category-list'>
+                        <span>ranch</span>
+                        <span>french</span>
+                        <span>balsalmic vinaigrette</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='location' class='f'>
+        <div id='info-container' class='g'>
+            <div id='address'>address</div>
+            <div id='hours' class='g'>
+                <div id='hours-open' class='g'>
+                    <div class='hours-list g'>
+                        <div class='days f'>
+                            <span>Tuesday</span>
+                            <span>Wednesday</span>
+                            <span>Thursday</span>
+                        </div>
+                        <div class='times f'>
+                            <span>0:00-0:00</span>
+                            <span>0:00-0:00</span>
+                            <span>0:00-0:00</span>
+                        </div>
+                    </div>
+                    <div class='hours-list g'>
+                        <div class='days f'>
+                            <span>Friday</span>
+                            <span>Saturday</span>
+                            <span>Sunday</span>
+                        </div>
+                        <div class='times f'>
+                            <span>0:00-0:00</span>
+                            <span>0:00-0:00</span>
+                            <span>0:00-0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div id='hours-closed'>Closed on Mondays.</div>
+            </div>
+            <div id='phone'>phone</div>
+        </div>
+    </section>
+  </main> -->
 
   </body>
 </html>
