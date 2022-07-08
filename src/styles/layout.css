@@ -170,18 +170,34 @@ main {
                         display: flex;
                         justify-content: space-between;
                         gap: var(--container-gap);
+
+                        width: max-content;
                     }
 
                         .category {
                             display: flex;
                             flex-flow: column;
-                            align-items: center;
                             gap: var(--container-gap);
+                        }
+
+                        #price-categories .category {
+                            align-items: center;
                         }
 
                 #pizza-toppings {
                     grid-area: toppings;
                 }
+
+                    #pizza-toppings .category {
+                        align-items: flex-start;
+                    }
+
+                        .category-list {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            gap: var(--container-gap);
+                        }
 
                 #pizza-list {
                     grid-area: list;

@@ -2,7 +2,8 @@
 
 :root {
     --base-shrink: 1.15vw;
-    /* --base: /// ; */
+    --subtext: 0.85em;
+    --menu-header: 1.5em;
 }
 
 body {
@@ -29,5 +30,14 @@ body {
 }
 
 #menu-container div > h2 {
-    font-size: 1.5em;
+    font-size: var(--menu-header);
 }
+
+    #sizes,
+    #price-categories .category span {
+        font-size: var(--subtext);
+    }
+
+    #pizza-toppings .category-list {
+        font-size: var(--subtext);
+    }

@@ -23,10 +23,19 @@
         color: var(--light);
     }
 
-#menu-container {
-    border: var(--thick) solid var(--accent);
+#menu {
+    background-color: var(--light);
 }
 
-    #pizza-prices {
-        border: var(--thin) solid var(--accent);
+    #menu-container {
+        border: var(--thick) solid var(--accent);
     }
+
+        #pizza-prices {
+            border: var(--thin) solid var(--accent);
+        }
+
+            #sizes,
+            #price-categories .category h3 {
+                color: var(--accent);
+            }
