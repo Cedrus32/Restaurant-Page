@@ -7,31 +7,6 @@
     --container-pad: 1em;
 }
 
-* {
-    /* /// */
-}
-
-.f {
-    display: flex;
-}
-
-    .col {
-        flex-flow: column;
-    }
-
-    .row {
-        flex-flow: row;
-    }
-
-.g {
-    display: grid;
-}
-
-    .auto {
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-    }
-
 /* DEFAULT */
 /* DEFAULT */
 /* DEFAULT */
@@ -86,7 +61,7 @@ main {
         min-height: 100vh;
         width: 100%;
 
-        padding: calc(10vh + 1em) 1em 1em;
+        padding: calc(10vh + 1em) 1em;
     }
 
     /* home page */
@@ -176,8 +151,6 @@ main {
                         display: flex;
                         justify-content: space-between;
                         gap: var(--container-gap);
-
-                        width: max-content;
                     }
 
                         .category {
@@ -260,22 +233,82 @@ main {
                     gap: var(--container-gap);
                 }
 
-            /* #drinks {
-                display: grid;
-                grid-template-columns: auto 1fr;
-                grid-template-rows: auto;
-                grid-template-areas: 'd-header d-container';
-                gap: var(--container-gap);
+    /* location page */
+
+    #location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #info-container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 'address'
+                                 'hours'
+                                 'phone';
+            gap: var(--container-gap);
+        }
+
+            #address,
+            #hours,
+            #phone {
+                padding: var(--container-pad) calc(var(--container-pad) * 5);
             }
 
-                #drinks h2 {
-                    grid-area: d-header;
+            #address {
+                grid-area: address;
+            }
+
+            #hours {
+                grid-area: hours;
+
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                gap: calc(var(--container-gap) / 2);
+            }
+
+                #hours-open {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-template-rows: auto auto;
+                    grid-template-areas: 'twt twt-hours'
+                                         'fss fss-hours';
+                    column-gap: var(--container-gap);
                 }
 
-                #drinks-list {
-                    grid-area: d-container;
+                    .twt.days {
+                        grid-area: twt;
+                    }
 
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: var(--container-gap);
-                } */
+                    .twt.times {
+                        grid-area: twt-hours;
+                    }
+
+                    .fss.days {
+                        grid-area: fss;
+                    }
+
+                    .fss.times {
+                        grid-area: fss-hours;
+                    }
+
+                    .days,
+                    .times {
+                        display: flex;
+                        flex-flow: column;
+
+                    }
+
+            #phone {
+                grid-area: phone;
+            }
+
+/* TABLET */
+/* TABLET */
+/* TABLET */
+
+/* @media only screen and (min-) */

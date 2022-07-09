@@ -23,7 +23,8 @@
         color: var(--light);
     }
 
-#menu {
+#menu,
+#location {
     background-color: var(--light);
 }
 
@@ -46,3 +47,9 @@
         #pizza-toppings {
             border: var(--thin) solid var(--accent);
         }
+
+#address,
+#hours,
+#phone {
+    border: var(--thin) solid var(--accent);
+}

@@ -56,3 +56,8 @@ body {
     .category-list span {
         font-size: var(--subtext);
     }
+
+#address,
+#phone {
+    text-align: center;
+}
