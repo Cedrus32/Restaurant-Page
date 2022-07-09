@@ -46,3 +46,13 @@ body {
     #sides-list .menu-item-ydesc span {
         font-size: var(--subtext);
     }
+
+    .sideways {
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+        text-align: center;
+    }
+
+    .category-list span {
+        font-size: var(--subtext);
+    }

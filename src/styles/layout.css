@@ -112,8 +112,8 @@ main {
 
         #menu-container {
             display: grid;
-            grid-template-rows: auto;
             grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, auto);
             grid-template-areas: 'pizzas'
                                  'sides'
                                  'drinks'
@@ -135,7 +135,7 @@ main {
                 
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: auto;
+                grid-template-rows: repeat(4, auto);
                 grid-template-areas: 'header'
                                      'prices'
                                      'toppings'
@@ -152,7 +152,7 @@ main {
 
                     display: grid;
                     grid-template-columns: auto 1fr;
-                    grid-template-rows: auto;
+                    grid-template-rows: auto auto;
                     grid-template-areas: '.     categories'
                                          'sizes categories';
                     gap: var(--container-gap);
@@ -183,11 +183,11 @@ main {
                         .category {
                             display: flex;
                             flex-flow: column;
-                            gap: var(--container-gap);
                         }
 
                         #price-categories .category {
                             align-items: center;
+                            gap: var(--container-gap);
                         }
 
                 #pizza-toppings {
@@ -198,13 +198,14 @@ main {
 
                     #pizza-toppings .category {
                         align-items: flex-start;
+                        gap: var(--container-gap);
                     }
 
                         .category-list {
                             display: flex;
-                            justify-content: space-between;
                             flex-wrap: wrap;
-                            gap: 0em var(--container-gap);
+                            justify-content: flex-start;
+                            gap: 0em calc(var(--container-gap) * 2);
                         }
 
                 #pizza-list {
@@ -221,16 +222,12 @@ main {
                 grid-area: sides;
             }
 
-            #sides,
-            #sides-list {
-                display: flex;
-                flex-flow: column;
-                gap: var(--container-gap);
-            }
-
-                /* #sides-list {
-                    flex-wrap: wrap;
-                } */
+                #sides,
+                #sides-list {
+                    display: flex;
+                    flex-flow: column;
+                    gap: var(--container-gap);
+                }
 
             #drinks {
                 grid-area: drinks;
@@ -239,3 +236,46 @@ main {
             #extras {
                 grid-area: extras;
             }
+
+            #drinks,
+            #extras {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 'header container';
+                gap: var(--container-gap);
+            }
+
+                #drinks h2,
+                #extras h2 {
+                    grid-area: header;
+                }
+
+                #drinks-lists,
+                #extras-lists {
+                    grid-area: container;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: var(--container-gap);
+                }
+
+            /* #drinks {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 'd-header d-container';
+                gap: var(--container-gap);
+            }
+
+                #drinks h2 {
+                    grid-area: d-header;
+                }
+
+                #drinks-list {
+                    grid-area: d-container;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: var(--container-gap);
+                } */
