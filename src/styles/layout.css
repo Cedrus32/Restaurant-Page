@@ -176,7 +176,7 @@ main {
                     padding: var(--container-pad);
                 }
 
-                    #pizza-toppings .category {
+                    #pizza-toppings.category {
                         align-items: flex-start;
                         gap: var(--container-gap);
                     }
@@ -314,3 +314,30 @@ main {
             #phone {
                 grid-area: phone;
             }
+
+
+/* LARGE SCREENS */
+/* LARGE SCREENS */
+/* LARGE SCREENS */
+
+@media only screen and (min-width: 1000px) {
+    #menu-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 'pizzas sides'
+                             'pizzas drinks'
+                             'pizzas extras';
+    }
+
+        #pizzas {
+            grid-template-columns: 1fr auto;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 'header header'
+                                 'prices prices'
+                                 'list   toppings';
+        }
+
+            #pizza-toppings .category-list {
+                flex-flow: column;
+            }
+}
