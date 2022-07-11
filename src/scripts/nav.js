@@ -54,7 +54,7 @@ const nav = (() => {
                 _target = 'location';
                 _populateLink(_a, _target);
         }
-        
+
         return _a;
     }
     function _populateLink(a, t) {

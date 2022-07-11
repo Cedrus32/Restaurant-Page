@@ -1,6 +1,9 @@
 import create from './elements';
 
 const home = (() => {
+    // data
+    let _title = "Tiki's Pizza";
+
     // handler
     function render() {
         let _content = _generateSection();
@@ -23,8 +26,8 @@ const home = (() => {
         let _logo = _generateLogo('');
         _hero.appendChild(_logo);
 
-        let _title = _generateTitle("Tiki's Pizza");
-        _hero.appendChild(_title);
+        let _titleHeader = _generateTitle(_title);
+        _hero.appendChild(_titleHeader);
 
         return _hero;
     }
