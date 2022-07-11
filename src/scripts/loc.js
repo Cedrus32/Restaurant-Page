@@ -16,19 +16,24 @@ const loc = (() => {
     function _generateSection() {
         let _section = create.section('#location');
 
-        let _infoContainer = create.div('#info-container');
+        let _infoContainer = _generateContainer();
         _section.appendChild(_infoContainer);
 
+        return _section;
+    }
+    function _generateContainer() {
+        let _container = create.div('#info-container');
+
         let _addressDiv = _generateAddress(_address);
-        _infoContainer.appendChild(_addressDiv);
+        _container.appendChild(_addressDiv);
 
         let _hoursContainer = _generateHours();
-        _infoContainer.appendChild(_hoursContainer);
+        _container.appendChild(_hoursContainer);
 
         let _phoneDiv = _generatePhone(_phone);
-        _infoContainer.appendChild(_phoneDiv);
+        _container.appendChild(_phoneDiv);
 
-        return _section;
+        return _container;
     }
     function _generateAddress(address) {
         let _div = create.div('#address')
