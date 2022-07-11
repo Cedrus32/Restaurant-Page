@@ -13,7 +13,6 @@ const nav = (() => {
     // helpers
     function _generateNav() {
         let _navbar = create.nav('#nav');
-        // _navbar.id = 'nav';
 
         let _links = _generateUl();
         _navbar.appendChild(_links);
@@ -22,7 +21,6 @@ const nav = (() => {
     }
     function _generateUl() {
         let _ul = create.ul('#nav-links');
-        // _ul.id = 'nav-links';
 
         for (let i = 0; i < 4; i++) {
             let _li = create.li();
@@ -34,10 +32,12 @@ const nav = (() => {
             }
             _ul.appendChild(_li);
         }
+
         return _ul;
     }
     function _generateLink(i) {
        let _a = create.a();
+
         switch (i) {
             case 0:
                 _target = 'home';
@@ -54,6 +54,7 @@ const nav = (() => {
                 _target = 'location';
                 _populateLink(_a, _target);
         }
+        
         return _a;
     }
     function _populateLink(a, t) {
