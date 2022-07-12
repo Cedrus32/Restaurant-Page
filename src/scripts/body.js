@@ -1,7 +1,7 @@
 import create from './elements';
 import nav from './nav';
 import home from './home';
-// import menu from './menu';
+import menu from './menu';
 import loc from './loc';
 
 const body = (() => {
