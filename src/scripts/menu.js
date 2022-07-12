@@ -66,8 +66,8 @@ const menu = (() => {
         let _drinksDiv = _generateDrinks();
         _container.appendChild(_drinksDiv);
 
-        // let _extrasDiv = _generateExtras();
-        // _container.appendChild(_extrasDiv);
+        let _extrasDiv = _generateExtras();
+        _container.appendChild(_extrasDiv);
 
         return _container;
     }
@@ -186,6 +186,18 @@ const menu = (() => {
 
         return _container;
     }
+    function _generateExtras() {
+        let _container = create.div('#extras');
+
+        let _header = create.h2('.sideways');
+        _header.textContent = 'Extras';
+        _container.appendChild(_header);
+
+        let _extrasList = _generateMenuCats(_extras);
+        _container.appendChild(_extrasList);
+
+        return _container;
+    }
     // ...factories
     function _generateMenuItems(array) {
         let _container = create.div(array[0]);
@@ -224,7 +236,7 @@ const menu = (() => {
             _categoryDiv.appendChild(_spanList);
 
             _container.appendChild(_categoryDiv);
-        }
+        };
 
         return _container;
     }
