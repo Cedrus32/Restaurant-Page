@@ -6,11 +6,6 @@ const menu = (() => {
                      ['Specialty', 'speciality-prices', '$12', '$14', '$18'],
                      ['Supreme', 'supreme-prices', '$14', '$16', '$20'],
                      ['Xtra Toppings', 'topping-prices', '$1', '$2', '$3'],
-                    ]
-    const _pizzas = [('Classic Cheese', 'red sauce, cheese'),
-                     ('Classic Pepperoni', 'red sauce, cheese, pepperoni'),
-                     ("Tiki's Special", 'red sauce, cheese, ham, pineapple'),
-                     ('The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'),
                     ];
     const _toppings = ['cheese',
                        'pepperoni',
@@ -22,6 +17,11 @@ const menu = (() => {
                        'red onion',
                        'fresh tomato',
                       ];
+    const _pizzas = [('Classic Cheese', 'red sauce, cheese'),
+                     ('Classic Pepperoni', 'red sauce, cheese, pepperoni'),
+                     ("Tiki's Special", 'red sauce, cheese, ham, pineapple'),
+                     ('The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'),
+                    ];
     const _sides = [('Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'),
                     ('Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'),
                     ('Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'),
@@ -152,37 +152,9 @@ const menu = (() => {
         _container.appendChild(_header);
 
         let _toppingsList = create.div('.category-list');
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < (_toppings.length); i++) {
             let _span = create.span();
-            switch(i) {
-                case 0:
-                    _span.textContent = 'cheese';
-                    break;
-                case 1:
-                    _span.textContent = 'pepperoni';
-                    break;
-                case 2:
-                    _span.textContent = 'ham';
-                    break;
-                case 3:
-                    _span.textContent = 'sausage';
-                    break;
-                case 4:
-                    _span.textContent = 'pineapple';
-                    break;
-                case 5:
-                    _span.textContent = 'green pepper';
-                    break;
-                case 6:
-                    _span.textContent = 'black olive';
-                    break;
-                case 7:
-                    _span.textContent = 'red onion';
-                    break;
-                case 8:
-                    _span.textContent = 'fresh tomato';
-                    break;
-            };
+            _span.textContent = _toppings[i];
             _toppingsList.appendChild(_span);
         }
         _container.appendChild(_toppingsList);
@@ -196,6 +168,7 @@ const menu = (() => {
             let _menuItem = create.div('.menu-item-ydesc');
             let _header = create.h3();
             let _span = create.span();
+
 
             switch(i) {
                 case 0:
