@@ -36,6 +36,7 @@ const menu = (() => {
 
         return _container;
     }
+    // ...pizza portion
     function _generatePizzas() {
         let _container = create.div('#pizzas');
 
@@ -46,10 +47,12 @@ const menu = (() => {
         let _prices = _generatePizzaPrices();
         _container.appendChild(_prices);
 
-
+        let _toppings = _generateToppings();
+        _container.appendChild(_toppings);
 
         return _container;
     }
+    // ...price divs
     function _generatePizzaPrices() {
         let _container = create.div('#pizza-prices');
 
@@ -162,6 +165,53 @@ const menu = (() => {
             element.appendChild(_span);
         };
     }
+    // ...pizza - other divs
+    function _generateToppings() {
+        let _container = create.div('#pizza-toppings', '.category');
+
+        let _header = create.h3();
+        _header.textContent = 'Toppings';
+        _container.appendChild(_header);
+
+        let _toppingsList = create.div('.category-list');
+        for (let i = 0; i < 9; i++) {
+            let _span = create.span();
+            switch(i) {
+                case 0:
+                    _span.textContent = 'cheese';
+                    break;
+                case 1:
+                    _span.textContent = 'pepperoni';
+                    break;
+                case 2:
+                    _span.textContent = 'ham';
+                    break;
+                case 3:
+                    _span.textContent = 'sausage';
+                    break;
+                case 4:
+                    _span.textContent = 'pineapple';
+                    break;
+                case 5:
+                    _span.textContent = 'green pepper';
+                    break;
+                case 6:
+                    _span.textContent = 'black olive';
+                    break;
+                case 7:
+                    _span.textContent = 'red onion';
+                    break;
+                case 8:
+                    _span.textContent = 'fresh tomato';
+                    break;
+            };
+            _toppingsList.appendChild(_span);
+        }
+        _container.appendChild(_toppingsList);
+
+        return _container;
+    }
+
 
     // make public
     return {
