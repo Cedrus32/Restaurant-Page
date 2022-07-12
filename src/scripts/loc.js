@@ -61,28 +61,28 @@ const loc = (() => {
     }
     function _generateOpen() {
         let _openContainer = create.div('#hours-open');
-        let _div = '';
+        let _span;
         for (let i = 0; i < 4; i++) {
             switch(i) {
                 case 0:
-                    _div = create.div('.twt', '.days');
-                    _generateSpans(_div, 'Tuesday', 'Wednesday', 'Thursday');
-                    _openContainer.appendChild(_div);
+                    _span = create.span('.twt', '.days');
+                    _generateSpans(_span, 'Tuesday', 'Wednesday', 'Thursday');
+                    _openContainer.appendChild(_span);
                     break;
                 case 1:
-                    _div = create.div('.twt', '.times');
-                    _generateSpans(_div, '11am-9pm', '11am-9pm', '11am-10pm');
-                    _openContainer.appendChild(_div);
+                    _span = create.span('.twt', '.times');
+                    _generateSpans(_span, '11am-9pm', '11am-9pm', '11am-10pm');
+                    _openContainer.appendChild(_span);
                     break;
                 case 2:
-                    _div = create.div('.fss', '.days');
-                    _generateSpans(_div, 'Friday', 'Saturday', 'Sunday');
-                    _openContainer.appendChild(_div);
+                    _span = create.span('.fss', '.days');
+                    _generateSpans(_span, 'Friday', 'Saturday', 'Sunday');
+                    _openContainer.appendChild(_span);
                     break;
                 case 3:
-                    _div = create.div('.fss', '.times');
-                    _generateSpans(_div, '11am-11pm', '11am-11pm', '11am-10pm');
-                    _openContainer.appendChild(_div);
+                    _span = create.span('.fss', '.times');
+                    _generateSpans(_span, '11am-11pm', '11am-11pm', '11am-10pm');
+                    _openContainer.appendChild(_span);
             };
         };
 

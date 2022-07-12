@@ -262,7 +262,7 @@ main {
             #address,
             #hours,
             #phone {
-                padding: var(--container-pad) calc(var(--container-pad) * 5);
+                padding: var(--container-pad);
             }
 
             #address {
