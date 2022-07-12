@@ -25,8 +25,8 @@ const menu = (() => {
         let _pizzasDiv = _generatePizzas();
         _container.appendChild(_pizzasDiv);
 
-        // let _sidesDiv = _generateSides();
-        // _container.appendChild(_sidesDiv);
+        let _sidesDiv = _generateSides();
+        _container.appendChild(_sidesDiv);
 
         // let _drinksDiv = _generateDrinks();
         // _container.appendChild(_drinksDiv);
@@ -238,6 +238,48 @@ const menu = (() => {
                 case 3:
                     _header.textContent = 'The Tiki Supreme';
                     _span.textContent = 'red sauce, cheese, sausage, green peppers, black olives, red onions';
+            };
+            _menuItem.appendChild(_header);
+            _menuItem.appendChild(_span);
+            _container.appendChild(_menuItem);
+        };
+
+        return _container;
+    }
+    // ...sides portion
+    function _generateSides() {
+        let _container = create.div('#sides');
+
+        let _header = create.h2();
+        _header.textContent = 'Sides';
+        _container.appendChild(_header);
+
+        let _sidesList = _generateSidesList();
+        _container.appendChild(_sidesList);
+
+        return _container;
+    }
+    function _generateSidesList() {
+        let _container = create.div('#sides-list');
+
+        for (let i = 0; i < 3; i++) {
+            let _menuItem = create.div('.menu-item-ydesc');
+            let _header = create.h3();
+            let _span = create.span();
+
+            switch(i) {
+                case 0:
+                    _header.textContent = 'Garden Salad';
+                    _span.textContent = 'lettuce, fresh tomato, green pepper, red onions, cheese, choice of salad dressing';
+                    break;
+                case 1:
+                    _header.textContent = 'Chicken Wings';
+                    _span.textContent = 'Crispy chicken wings, choice of dipping sauce';
+                    break;
+                case 2:
+                    _header.textContent = "Tiki Fries";
+                    _span.textContent = 'Golden fries with house seasoning, choice of dipping sauce';
+                    break;
             };
             _menuItem.appendChild(_header);
             _menuItem.appendChild(_span);
