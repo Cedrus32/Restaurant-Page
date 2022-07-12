@@ -50,6 +50,9 @@ const menu = (() => {
         let _toppings = _generateToppings();
         _container.appendChild(_toppings);
 
+        let _pizzaList = _generatePizzaList();
+        _container.appendChild(_pizzaList);
+
         return _container;
     }
     // ...price divs
@@ -208,6 +211,38 @@ const menu = (() => {
             _toppingsList.appendChild(_span);
         }
         _container.appendChild(_toppingsList);
+
+        return _container;
+    }
+    function _generatePizzaList() {
+        let _container = create.div('#pizza-list');
+
+        for (let i = 0; i < 4; i++) {
+            let _menuItem = create.div('.menu-item-ydesc');
+            let _header = create.h3();
+            let _span = create.span();
+
+            switch(i) {
+                case 0:
+                    _header.textContent = 'Classic Cheese';
+                    _span.textContent = 'red sauce, cheese';
+                    break;
+                case 1:
+                    _header.textContent = 'Classic Pepperoni';
+                    _span.textContent = 'red sauce, cheese, pepperoni';
+                    break;
+                case 2:
+                    _header.textContent = "Tiki's Special";
+                    _span.textContent = 'red sauce, cheese, ham, pineapple';
+                    break;
+                case 3:
+                    _header.textContent = 'The Tiki Supreme';
+                    _span.textContent = 'red sauce, cheese, sausage, green peppers, black olives, red onions';
+            };
+            _menuItem.appendChild(_header);
+            _menuItem.appendChild(_span);
+            _container.appendChild(_menuItem);
+        };
 
         return _container;
     }
