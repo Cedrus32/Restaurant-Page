@@ -2,6 +2,37 @@ import create from './elements';
 
 const menu = (() => {
     // data
+    const _prices = [['Classic', 'classic-prices', '$10', '$12', '$16'],
+                     ['Specialty', 'speciality-prices', '$12', '$14', '$18'],
+                     ['Supreme', 'supreme-prices', '$14', '$16', '$20'],
+                     ['Xtra Toppings', 'topping-prices', '$1', '$2', '$3'],
+                    ]
+    const _pizzas = [('Classic Cheese', 'red sauce, cheese'),
+                     ('Classic Pepperoni', 'red sauce, cheese, pepperoni'),
+                     ("Tiki's Special", 'red sauce, cheese, ham, pineapple'),
+                     ('The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'),
+                    ];
+    const _toppings = ['cheese',
+                       'pepperoni',
+                       'ham',
+                       'sausage',
+                       'pineapple',
+                       'green pepper',
+                       'black olive',
+                       'red onion',
+                       'fresh tomato',
+                      ];
+    const _sides = [('Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'),
+                    ('Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'),
+                    ('Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'),
+                   ];
+    const _drinks = [('"Shake-Shake-Shakes" - $', 'vanilla', 'chocolate', 'strawberry'),
+                     ('soda - $', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'),
+                     ('beer - $', 'Bud', 'Miller', 'Modelo', 'Stella Artois'),
+                    ];
+    const _extras = [('dipping sauce - ¢50', 'bacon katchup', 'sriracha mayo', 'honey mustard'),
+                     ('salad dressings - ¢50', 'ranch', 'french', 'balsalmic vinaigrette'),
+                    ];
 
     // handler
     function render() {
@@ -27,6 +58,10 @@ const menu = (() => {
 
         let _sidesDiv = _generateSides();
         _container.appendChild(_sidesDiv);
+
+        // ! create arrays with data,
+        // ! push arrays to 'createMenuItems',
+        // ! index into arrays to create items
 
         // let _drinksDiv = _generateDrinks();
         // _container.appendChild(_drinksDiv);
@@ -65,7 +100,7 @@ const menu = (() => {
         let _priceContainer = create.div('#price-categories');
         _container.appendChild(_priceContainer);
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < (_prices.length); i++) {
             let _priceCategory = _generatePriceCat(i);
             _priceContainer.appendChild(_priceCategory);
         }
@@ -92,79 +127,19 @@ const menu = (() => {
         return _column;
     }
     function _generatePriceCat(i) {
-        let _listContainer = create.div('.category');
+        console.log(_prices);
+        let _listContainer = create.div('.category', `#${_prices[i][1]}`);
         let _header = create.h3();
-        switch(i) {
-            case 0:
-                _listContainer.id = 'classic-prices';
-                _header.textContent = 'Classic';
-                break;
-            case 1:
-                _listContainer.id = 'specialty-prices';
-                _header.textContent = 'Specialty';
-                break;
-            case 2:
-                _listContainer.id = 'supreme-prices';
-                _header.textContent = 'Supreme';
-                break;
-            case 3:
-                _listContainer.id = 'topping-prices';
-                _header.textContent = 'Xtra Toppings';
-        };
+        _header.textContent = _prices[i][0];
         _listContainer.appendChild(_header);
         _generatePriceSpans(_listContainer, i);
 
         return _listContainer;
     }
     function _generatePriceSpans(element, i) {
-        for (let j = 0; j < 3; j++) {
+        for (let j = 2; j < (_prices[i].length); j++) {
             let _span = create.span();
-            switch(i) {
-                case 0:
-                    switch(j) {
-                        case 0:
-                            _span.textContent = '$10';
-                            break;
-                        case 1:
-                            _span.textContent = '$12';
-                            break;
-                        case 2:
-                            _span.textContent = '$16';
-                    };
-                case 1:
-                    switch(j) {
-                        case 0:
-                            _span.textContent = '$12';
-                            break;
-                        case 1:
-                            _span.textContent = '$14';
-                            break;
-                        case 2:
-                            _span.textContent = '$18';
-                    };
-                case 2:
-                    switch(j) {
-                        case 0:
-                            _span.textContent = '$14';
-                            break;
-                        case 1:
-                            _span.textContent = '$16';
-                            break;
-                        case 2:
-                            _span.textContent = '$20';
-                    };
-                case 3:
-                    switch(j) {
-                        case 0:
-                            _span.textContent = '$1';
-                            break;
-                        case 1:
-                            _span.textContent = '$2';
-                            break;
-                        case 2:
-                            _span.textContent = '$3';
-                    };
-            };
+            _span.textContent = _prices[i][j];
             element.appendChild(_span);
         };
     }
