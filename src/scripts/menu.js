@@ -17,10 +17,10 @@ const menu = (() => {
                        'red onion',
                        'fresh tomato',
                       ];
-    const _pizzas = [('Classic Cheese', 'red sauce, cheese'),
-                     ('Classic Pepperoni', 'red sauce, cheese, pepperoni'),
-                     ("Tiki's Special", 'red sauce, cheese, ham, pineapple'),
-                     ('The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'),
+    const _pizzas = [['Classic Cheese', 'red sauce, cheese'],
+                     ['Classic Pepperoni', 'red sauce, cheese, pepperoni'],
+                     ["Tiki's Special", 'red sauce, cheese, ham, pineapple'],
+                     ['The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'],
                     ];
     const _sides = [('Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'),
                     ('Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'),
@@ -127,7 +127,6 @@ const menu = (() => {
         return _column;
     }
     function _generatePriceCat(i) {
-        console.log(_prices);
         let _listContainer = create.div('.category', `#${_prices[i][1]}`);
         let _header = create.h3();
         _header.textContent = _prices[i][0];
@@ -169,24 +168,9 @@ const menu = (() => {
             let _header = create.h3();
             let _span = create.span();
 
+            _header.textContent = _pizzas[i][0];
+            _span.textContent = _pizzas[i][1];
 
-            switch(i) {
-                case 0:
-                    _header.textContent = 'Classic Cheese';
-                    _span.textContent = 'red sauce, cheese';
-                    break;
-                case 1:
-                    _header.textContent = 'Classic Pepperoni';
-                    _span.textContent = 'red sauce, cheese, pepperoni';
-                    break;
-                case 2:
-                    _header.textContent = "Tiki's Special";
-                    _span.textContent = 'red sauce, cheese, ham, pineapple';
-                    break;
-                case 3:
-                    _header.textContent = 'The Tiki Supreme';
-                    _span.textContent = 'red sauce, cheese, sausage, green peppers, black olives, red onions';
-            };
             _menuItem.appendChild(_header);
             _menuItem.appendChild(_span);
             _container.appendChild(_menuItem);
