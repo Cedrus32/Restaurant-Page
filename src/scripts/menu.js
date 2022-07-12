@@ -28,12 +28,14 @@ const menu = (() => {
                     ['Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'],
                     ['Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'],
                    ];
-    const _drinks = [('"Shake-Shake-Shakes" - $', 'vanilla', 'chocolate', 'strawberry'),
-                     ('soda - $', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'),
-                     ('beer - $', 'Bud', 'Miller', 'Modelo', 'Stella Artois'),
+    const _drinks = ['#drinks-lists',
+                     ['"Shake-Shake-Shakes" - $', 'vanilla', 'chocolate', 'strawberry'],
+                     ['soda - $', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'],
+                     ['beer - $', 'Bud', 'Miller', 'Modelo', 'Stella Artois'],
                     ];
-    const _extras = [('dipping sauce - ¢50', 'bacon katchup', 'sriracha mayo', 'honey mustard'),
-                     ('salad dressings - ¢50', 'ranch', 'french', 'balsalmic vinaigrette'),
+    const _extras = ['#extras-lists',
+                     ['dipping sauce - ¢50', 'bacon katchup', 'sriracha mayo', 'honey mustard'],
+                     ['salad dressings - ¢50', 'ranch', 'french', 'balsalmic vinaigrette'],
                     ];
 
     // handler
@@ -61,12 +63,8 @@ const menu = (() => {
         let _sidesDiv = _generateSides();
         _container.appendChild(_sidesDiv);
 
-        // ! create arrays with data,
-        // ! push arrays to 'createMenuItems',
-        // ! index into arrays to create items
-
-        // let _drinksDiv = _generateDrinks();
-        // _container.appendChild(_drinksDiv);
+        let _drinksDiv = _generateDrinks();
+        _container.appendChild(_drinksDiv);
 
         // let _extrasDiv = _generateExtras();
         // _container.appendChild(_extrasDiv);
@@ -175,6 +173,19 @@ const menu = (() => {
 
         return _container;
     }
+    // ...drinks portion
+    function _generateDrinks() {
+        let _container = create.div('#drinks');
+
+        let _header = create.h2('.sideways');
+        _header.textContent = 'Drinks';
+        _container.appendChild(_header);
+
+        let _drinksList = _generateMenuCats(_drinks);
+        _container.appendChild(_drinksList);
+
+        return _container;
+    }
     // ...factories
     function _generateMenuItems(array) {
         let _container = create.div(array[0]);
@@ -191,6 +202,29 @@ const menu = (() => {
             _menuItem.appendChild(_span);
             _container.appendChild(_menuItem);
         };
+
+        return _container;
+    }
+    function _generateMenuCats(array) {
+        let _container = create.div(array[0]);
+
+        for (let i = 1; i < (array.length); i++) {
+            let _categoryDiv = create.div('.category');
+
+            let _header = create.h3();
+            _header.textContent = array[i][0];
+            _categoryDiv.appendChild(_header);
+
+            let _spanList = create.div('.category-list');
+            for (let j = 1; j < (array[i].length); j++) {
+                let _span = create.span();
+                _span.textContent = array[i][j];
+                _spanList.appendChild(_span);
+            };
+            _categoryDiv.appendChild(_spanList);
+
+            _container.appendChild(_categoryDiv);
+        }
 
         return _container;
     }
