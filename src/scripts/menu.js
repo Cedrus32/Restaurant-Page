@@ -17,14 +17,16 @@ const menu = (() => {
                        'red onion',
                        'fresh tomato',
                       ];
-    const _pizzas = [['Classic Cheese', 'red sauce, cheese'],
+    const _pizzas = ['#pizza-list',
+                     ['Classic Cheese', 'red sauce, cheese'],
                      ['Classic Pepperoni', 'red sauce, cheese, pepperoni'],
                      ["Tiki's Special", 'red sauce, cheese, ham, pineapple'],
                      ['The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'],
                     ];
-    const _sides = [('Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'),
-                    ('Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'),
-                    ('Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'),
+    const _sides = ['#sides-list',
+                    ['Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'],
+                    ['Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'],
+                    ['Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'],
                    ];
     const _drinks = [('"Shake-Shake-Shakes" - $', 'vanilla', 'chocolate', 'strawberry'),
                      ('soda - $', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'),
@@ -85,7 +87,7 @@ const menu = (() => {
         let _toppings = _generateToppings();
         _container.appendChild(_toppings);
 
-        let _pizzaList = _generatePizzaList();
+        let _pizzaList = _generateMenuItems(_pizzas);
         _container.appendChild(_pizzaList);
 
         return _container;
@@ -160,24 +162,6 @@ const menu = (() => {
 
         return _container;
     }
-    function _generatePizzaList() {
-        let _container = create.div('#pizza-list');
-
-        for (let i = 0; i < 4; i++) {
-            let _menuItem = create.div('.menu-item-ydesc');
-            let _header = create.h3();
-            let _span = create.span();
-
-            _header.textContent = _pizzas[i][0];
-            _span.textContent = _pizzas[i][1];
-
-            _menuItem.appendChild(_header);
-            _menuItem.appendChild(_span);
-            _container.appendChild(_menuItem);
-        };
-
-        return _container;
-    }
     // ...sides portion
     function _generateSides() {
         let _container = create.div('#sides');
@@ -186,33 +170,23 @@ const menu = (() => {
         _header.textContent = 'Sides';
         _container.appendChild(_header);
 
-        let _sidesList = _generateSidesList();
+        let _sidesList = _generateMenuItems(_sides);
         _container.appendChild(_sidesList);
 
         return _container;
     }
-    function _generateSidesList() {
-        let _container = create.div('#sides-list');
+    // ...factories
+    function _generateMenuItems(array) {
+        let _container = create.div(array[0]);
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 1; i < (array.length); i++) {
             let _menuItem = create.div('.menu-item-ydesc');
             let _header = create.h3();
             let _span = create.span();
 
-            switch(i) {
-                case 0:
-                    _header.textContent = 'Garden Salad';
-                    _span.textContent = 'lettuce, fresh tomato, green pepper, red onions, cheese, choice of salad dressing';
-                    break;
-                case 1:
-                    _header.textContent = 'Chicken Wings';
-                    _span.textContent = 'Crispy chicken wings, choice of dipping sauce';
-                    break;
-                case 2:
-                    _header.textContent = "Tiki Fries";
-                    _span.textContent = 'Golden fries with house seasoning, choice of dipping sauce';
-                    break;
-            };
+            _header.textContent = array[i][0];
+            _span.textContent = array[i][1];
+
             _menuItem.appendChild(_header);
             _menuItem.appendChild(_span);
             _container.appendChild(_menuItem);
