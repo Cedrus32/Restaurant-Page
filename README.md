@@ -1,6 +1,7 @@
 # Restaurant-Page
 
 Completed through The Odin Project
+
 https://cedrus32.github.io/Restaurant-Page/
 
 This is my first project using webpack to create a website. The focus was to become comfortable with writing modular code and importing these modules to the relevant places on the site. I also practiced using factory functions to create HTML DOM elements, as well as building some repeated structures as can be seen in `src/scripts/menu.js`.
