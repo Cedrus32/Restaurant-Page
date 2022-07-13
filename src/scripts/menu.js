@@ -24,14 +24,14 @@ const menu = (() => {
                      ['The Tiki Supreme', 'red sauce, cheese, sausage, green peppers, black olives, red onions'],
                     ];
     const _sides = ['#sides-list',
-                    ['Garden Salad - $', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'],
-                    ['Chicken Wings - $', 'Crispy chicken wings, choice of dipping sauce'],
-                    ['Tiki Fries - $', 'Golden fries with hous seasoning, choice of dipping sauce'],
+                    ['Garden Salad - $7', 'lettuce, fresh tomato, green pepper, red onions, choice of salad dressing'],
+                    ['Chicken Wings - $9', 'Crispy chicken wings, choice of dipping sauce'],
+                    ['Tiki Fries - $5', 'Golden fries with hous seasoning, choice of dipping sauce'],
                    ];
     const _drinks = ['#drinks-lists',
-                     ['"Shake-Shake-Shakes" - $', 'vanilla', 'chocolate', 'strawberry'],
-                     ['soda - $', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'],
-                     ['beer - $', 'Bud', 'Miller', 'Modelo', 'Stella Artois'],
+                     ['"Shake-Shake-Shakes" - $5', 'vanilla', 'chocolate', 'strawberry'],
+                     ['soda - $3', 'Coke', 'Diet Coke', 'Sprite', 'Pibb Xtra'],
+                     ['beer - $5', 'Bud', 'Miller', 'Modelo', 'Stella Artois'],
                     ];
     const _extras = ['#extras-lists',
                      ['dipping sauce - ¢50', 'bacon katchup', 'sriracha mayo', 'honey mustard'],

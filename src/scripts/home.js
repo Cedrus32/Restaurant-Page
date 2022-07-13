@@ -1,4 +1,6 @@
 import create from './elements';
+import logo from '../logo.svg';
+console.log(logo);
 
 const home = (() => {
     // data
@@ -23,7 +25,7 @@ const home = (() => {
     function _generateHero() {
         let _hero = create.div('#hero');
 
-        let _logo = _generateLogo('');
+        let _logo = _generateLogo(logo);
         _hero.appendChild(_logo);
 
         let _titleHeader = _generateTitle(_title);
